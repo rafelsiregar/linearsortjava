@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Radix {
+	//Get the maximum elements of Array
 	public static int getMax(int arr[]) {
 		int max = arr[0];
 		for(int i=1;i<arr.length;i++) {
@@ -12,7 +13,7 @@ public class Radix {
 		}
 		return max;
 	}
-	
+	//Sort array from its element's bit 
 	public static void sort(int arr[], int exp) {
 		List<Integer> count[] = new List[10];
 		int output[] = new int[arr.length];
@@ -23,7 +24,7 @@ public class Radix {
 		for(int i=0;i<arr.length;i++) {
 			count[(arr[i]/exp)%10].add(arr[i]);
 		}
-		//Show the sorted list
+		//Store the sorted array in the output array
 		int j=0;
 		for(int i=0;i<10;i++) {
 			Iterator<Integer> iterator = count[i].iterator();
@@ -33,6 +34,7 @@ public class Radix {
 			}
 	}
 		
+	//Show the array sorted
 	for(int i=0;i<output.length;i++) {
 		arr[i] = output[i];
 		System.out.print(arr[i]+" ");
